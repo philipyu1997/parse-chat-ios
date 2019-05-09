@@ -25,10 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }))
         
         // check if user is logged in.
-        if PFUser.current() != nil {
+        if let currentUser = PFUser.current() {
+            print("Welcome back \(currentUser.username!) 😀")
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             // view controller currently being set in Storyboard as default will be overridden
-            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")
+            let chatViewController = storyboard.instantiateViewController(withIdentifier: "ChatViewController")
+            window?.rootViewController = chatViewController
         }
         
         return true
