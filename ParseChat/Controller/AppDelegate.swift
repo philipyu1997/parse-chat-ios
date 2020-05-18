@@ -14,26 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         // Parse server setup
         Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
             ***REMOVED***
             ***REMOVED***
         }))
-        
+
         // check if user is logged in.
         if let currentUser = PFUser.current() {
             print("Welcome back \(currentUser.username!) 😀")
-            
+
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             // view controller currently being set in Storyboard as default will be overridden
             let chatViewController = storyboard.instantiateViewController(withIdentifier: "ChatViewController")
             window?.rootViewController = chatViewController
         }
-        
+
         return true
     }
 
@@ -59,6 +58,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

@@ -13,11 +13,11 @@ class ChatCell: UITableViewCell {
     @IBOutlet weak var bubbleView: UIView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var chatMessageLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         bubbleView.sizeToFit()
         bubbleView.layer.cornerRadius = 16
         bubbleView.clipsToBounds = true
@@ -29,10 +29,9 @@ class ChatCell: UITableViewCell {
 //        bubbleView.backgroundColor = UIColor(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0) // Blue (Default)
 //        bubbleView.backgroundColor = UIColor(red: 88.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0) // Purple
 //        bubbleView.backgroundColor = UIColor(red: 255.0/255.0, green: 45.0/255.0, blue: 85.0/255.0, alpha: 1.0) // Pink
-        
-        
+
         chatMessageLabel.textColor = UIColor.white
-        
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
