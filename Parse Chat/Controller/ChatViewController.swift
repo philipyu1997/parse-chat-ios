@@ -9,20 +9,20 @@
 import UIKit
 import Parse
 
-class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChatViewController: UIViewController {
 
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-
-    var messages: [PFObject]?
-
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chatMessageField: UITextField!
+    
+    // MARK: - Properties
+    private var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    private var messages: [PFObject]?
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
+        
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -39,13 +39,13 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @objc func onTimer() {
 
-        // construct query
+        // Construct query
         let messageQuery = PFQuery(className: "Message")
 
         messageQuery.includeKey("user")
         messageQuery.addDescendingOrder("createdAt")
 
-        // fetch data asynchronously
+        // Fetch data asynchronously
         messageQuery.findObjectsInBackground { (messages, error) in
             if error == nil {
                 self.messages = []
@@ -61,6 +61,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
 
     }
+    
+    // MARK: - IBAction Section
 
     @IBAction func onLogout(_ sender: Any) {
 
@@ -92,6 +94,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     }
 
+}
+
+extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: - UITableViewDataSource Section
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         var messageCount = 0
@@ -125,15 +133,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         return cell
     }
-
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-
+    
+    // MARK: - UITableViewDelegate Section
+    
 }
