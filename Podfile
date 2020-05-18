@@ -8,14 +8,4 @@ target 'ParseChat' do
   # Pods for ParseChat
   pod 'Parse'
 
-  target 'ParseChatTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ParseChatUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
