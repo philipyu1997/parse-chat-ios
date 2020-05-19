@@ -5,6 +5,9 @@ target 'Parse Chat' do
   use_frameworks!
 
   # Pods for Parse Chat
+  pod 'AlamofireImage'
+  pod 'IQKeyboardManagerSwift'
   pod 'Parse'
+  pod 'ProgressHUD'
 
 end

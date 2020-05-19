@@ -8,29 +8,24 @@
 
 import UIKit
 import Parse
+import ProgressHUD
 
 class LoginViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-    }
-    
-    // MARK: - Private Function Section
-
-    private func displayAlertMessage(alertTitle: String = "Alert", alertMessage: String = "Default alert message", actionTitle: String = "Dismiss", actionStyle: UIAlertAction.Style = .default) {
-
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let action = UIAlertAction(title: actionTitle, style: actionStyle, handler: nil)
+        // Setup button properties
+        loginButton.makeRounded(withRadius: 8)
+        registerButton.makeRounded(withRadius: 8)
         
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-
     }
 
     // MARK: - IBAction Section
@@ -45,27 +40,23 @@ class LoginViewController: UIViewController {
 
         // Validate text fields
         if username.count < minUserLength {
-            displayAlertMessage(alertTitle: "Invalid", alertMessage: "Username must be greater than 5 characters")
+            ProgressHUD.showError("Username must be at least \(minUserLength) characters")
         } else if password.count < minPasswordLength {
-            displayAlertMessage(alertTitle: "Invalid", alertMessage: "Password must be greater than 8 characters")
+            ProgressHUD.showError("Password must be at least \(minPasswordLength) characters")
         } else {
             // Check for empty fields
             if username.isEmpty || password.isEmpty {
-                displayAlertMessage(alertTitle: "Ok", alertMessage: "All fields are required")
+                ProgressHUD.showError("All fields are required")
             }
 
             // Sign in the user asynchronously
             PFUser.logInWithUsername(inBackground: username, password: password) { (success, error) in
                 if success != nil {
-                    let alert = UIAlertController(title: "Success", message: "Logged In", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                        self.performSegue(withIdentifier: "loginSegue", sender: nil)
-                    })
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
+                    ProgressHUD.showSuccess("Logged In")
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 } else {
-                    self.displayAlertMessage(alertTitle: "Error", alertMessage: "Invalid username/password.")
-                    print("Error: \(String(describing: error?.localizedDescription))")
+                    ProgressHUD.showError("Invalid username/password")
+                    print("Error: \(String(describing: error!.localizedDescription))")
                 }
             }
         }
@@ -84,8 +75,10 @@ class LoginViewController: UIViewController {
         // Call sign up function on the object
         user.signUpInBackground { (_: Bool, error: Error?) in
             if let error = error {
+                ProgressHUD.showError(error.localizedDescription)
                 print(error.localizedDescription)
             } else {
+                ProgressHUD.showSuccess("Successfully registered account!")
                 print("User Registered successfully")
             }
         }
