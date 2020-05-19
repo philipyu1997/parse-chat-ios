@@ -1,39 +1,48 @@
-# Lab 5 - Parse Chat
+# Parse Chat
 
-**ParseChat** is a Chat app using an [open source Parse](http://parseplatform.org/) backend.
+## Table of Contents
+1. [Overview](#Overview)
+2. [Product Specs](#Product-Specs)
+3. [App Walkthrough](#App-Walkthrough)
+4. [Open-Source libraries used](#Open-Source-libraries-used)
+5. [Credits](#Credits)
 
-Time spent: **NUMBER_OF_HOURS** hours spent in total
+## Overview
+### Description
 
-## User Stories
+Parse Chat is a chat client using Parse to explore the features of its ORM and backend service.
 
-The following **required** user stories are complete:
+## Product Specs
+### User Stories
 
-- [x] User can sign up and sign in to the login screen (+1pt)
-- [x] User sees alerts for login exceptions, i.e. "account already exists", "wrong credentials", etc. (+1pt)
-- [x] User can compose and send chat messages (+2pt)
-- [x] User can view a list of chat messages in chronological order (+2pt)
-- [x] Automatically Adjust Cell Size to Fit Text (+1pt)
-- [x] Username of chat author is displayed in each chat message (+2pt)
-- [x] Persist Logged in User (+1pt)
+- [X] User shall be able to sign up and sign in to the login screen.
+- [X] User shall be able to see alerts for login exceptions, i.e. "account already exists", "wrong credentials", etc.
+- [X] User shall be able to compose and send chat messages.
+- [X] User shall be able to view a list of chat messages in chronological order.
+- [X] Cell shall automatically adjust size to fit text.
+- [X] User shall be able to see username of chat author displayed in each chat message.
+- [X] User shall be able to stay logged in across restarts.
+- [X] User shall be able to see an activity indicator while waiting for authentication.
+- [X] User shall be able to pull to refresh Chat feed.
+- [X] User shall be able to see adorable avatars next chat bubbles from [Adorable Avatars API](https://github.com/adorableio/avatars-api).
+- [X] User shall be able to see bubble design chat messages.
+- [X] Chat messages shall be able to expand or contract as needed to show the chat message author (user) if it exists.
 
-The following **stretch** user stories are implemented:
+## App Walkthrough
 
-- [X] User sees an activity indicator while waiting for authentication (+1pt)
-- [X] User can pull to refresh Chat feed (+1pt)
-- [ ] Add an "Adorable Avatar" for each user by requesting an avatar from the [Adorable Avatars API](https://github.com/adorableio/avatars-api) (+2pt)
-- [X] Chat Bubble Style Design (+3pt)
-- [ ] Expand or contract the cell layout as needed to show the chat message author (user) if it exists (+2pt)
+Here's a GIF of how the app works:
 
-The following **additional** user stories are implemented:
+<img src="https://user-images.githubusercontent.com/35745973/82294769-81fee880-9963-11ea-9922-a0aec5455180.gif" width=250><br>
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+## Open-source libraries used
 
-## Video Walkthrough
+- [Alamofire](https://github.com/Alamofire/Alamofire) - An HTTP networking library written in Swift.
+- [AlamofireImage](https://github.com/Alamofire/AlamofireImage) - An image component library for Alamofire.
+- [Bolts](https://github.com/BoltsFramework/Bolts-Swift) - A collection of low-level libraries designed to make developing mobile apps easier.
+- [IQKeyboardManagerSwift](https://github.com/hackiftekhar/IQKeyboardManager) - A codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView.
+- [Parse](https://github.com/parse-community/Parse-SDK-iOS-OSX) - An open source Backend-as-a-Service (BaaS) framework initially developed by Facebook. The platform now has an active and robust community of fanatical developers who constantly innovate and strive to improve the already impressive and modular platform.
+- [ProgressHUD](https://github.com/relatedcode/ProgressHUD) - A lightweight and easy-to-use HUD for iOS (written in Objective-C).
 
-Here's a walkthrough of implemented user stories:
+## Credits
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-## Notes
-
-Describe any challenges encountered while building the app.
+>This is a companion project to CodePath's Professional iOS Course, check out the full course at [www.codepath.org](https://codepath.org/)
