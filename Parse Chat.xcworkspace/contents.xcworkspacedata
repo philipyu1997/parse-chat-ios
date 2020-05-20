@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/philipyu/Desktop/git_workspace/mobile_development/codepath/ios/parse-chat-ios/Parse Chat.xcodeproj">
+      location = "group:Parse Chat.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Parse Chat.xcodeproj">
    </FileRef>
 </Workspace>

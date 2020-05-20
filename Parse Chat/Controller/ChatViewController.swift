@@ -55,48 +55,6 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    @objc func fetchMessages() {
-        
-        // Construct query
-        let messageQuery = PFQuery(className: "Message")
-        
-        messageQuery.includeKey("user")
-        messageQuery.addDescendingOrder("createdAt")
-        messageQuery.limit = 20
-        
-        // Fetch data asynchronously
-        messageQuery.findObjectsInBackground { (messages, error) in
-            if error == nil {
-                if let messages = messages {
-                    self.messages = messages
-                }
-            } else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-            }
-            
-            self.tableView.reloadData()
-            self.refresh()
-        }
-        
-    }
-    
-    // Implement the delay method
-    func run(after wait: TimeInterval, closure: @escaping () -> Void) {
-     
-        let queue = DispatchQueue.main
-        queue.asyncAfter(deadline: DispatchTime.now() + wait, execute: closure)
-        
-    }
-    
-    // Call the delay method in your onRefresh() method
-    func refresh() {
-     
-        run(after: 2) {
-           self.refreshControl.endRefreshing()
-        }
-        
-    }
-    
     // MARK: - IBAction Section
     
     @IBAction func onLogout(_ sender: Any) {
@@ -125,6 +83,48 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
             } else if let error = error {
                 print("Problem saving message: \(error.localizedDescription)")
             }
+        }
+        
+    }
+    
+    @objc private func fetchMessages() {
+        
+        // Construct query
+        let messageQuery = PFQuery(className: "Message")
+        
+        messageQuery.includeKey("user")
+        messageQuery.addDescendingOrder("createdAt")
+        messageQuery.limit = 20
+        
+        // Fetch data asynchronously
+        messageQuery.findObjectsInBackground { (messages, error) in
+            if error == nil {
+                if let messages = messages {
+                    self.messages = messages
+                }
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+            
+            self.tableView.reloadData()
+            self.refresh()
+        }
+        
+    }
+    
+    // Implement the delay method
+    private func run(after wait: TimeInterval, closure: @escaping () -> Void) {
+     
+        let queue = DispatchQueue.main
+        queue.asyncAfter(deadline: DispatchTime.now() + wait, execute: closure)
+        
+    }
+    
+    // Call the delay method in your onRefresh() method
+    private func refresh() {
+     
+        run(after: 2) {
+           self.refreshControl.endRefreshing()
         }
         
     }
@@ -187,7 +187,5 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
-    // MARK: - UITableViewDelegate Section
     
 }
