@@ -4,8 +4,10 @@
 1. [Overview](#Overview)
 2. [Product Specs](#Product-Specs)
 3. [App Walkthrough](#App-Walkthrough)
-4. [Open-Source libraries used](#Open-Source-libraries-used)
-5. [Credits](#Credits)
+4. [APIs Used](#APIs-Used)
+5. [Open-Source libraries used](#Open-Source-libraries-used)
+6. [Backend](#Backend)
+7. [Credits](#Credits)
 
 ## Overview
 ### Description
@@ -34,14 +36,20 @@ Here's a GIF of how the app works:
 
 <img src="https://user-images.githubusercontent.com/35745973/82294769-81fee880-9963-11ea-9922-a0aec5455180.gif" width=250><br>
 
+## APIs Used
+
+- [Adorable Avatars API](https://github.com/adorableio/avatars-api-middleware) - An avatar placeholder service for web developers and designers.
+
 ## Open-source libraries used
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) - An HTTP networking library written in Swift.
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage) - An image component library for Alamofire.
-- [Bolts](https://github.com/BoltsFramework/Bolts-Swift) - A collection of low-level libraries designed to make developing mobile apps easier.
 - [IQKeyboardManagerSwift](https://github.com/hackiftekhar/IQKeyboardManager) - A codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView.
-- [Parse](https://github.com/parse-community/Parse-SDK-iOS-OSX) - An open source Backend-as-a-Service (BaaS) framework initially developed by Facebook. The platform now has an active and robust community of fanatical developers who constantly innovate and strive to improve the already impressive and modular platform.
 - [ProgressHUD](https://github.com/relatedcode/ProgressHUD) - A lightweight and easy-to-use HUD for iOS (written in Objective-C).
+
+## Backend
+
+- [Parse](https://github.com/parse-community/Parse-SDK-iOS-OSX) - An open source Backend-as-a-Service (BaaS) framework initially developed by Facebook. The platform now has an active and robust community of fanatical developers who constantly innovate and strive to improve the already impressive and modular platform.
 
 ## Credits
 
