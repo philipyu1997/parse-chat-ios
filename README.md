@@ -4,8 +4,8 @@
 1. [Overview](#Overview)
 2. [Product Specs](#Product-Specs)
 3. [App Walkthrough](#App-Walkthrough)
-4. [APIs Used](#APIs-Used)
-5. [Open-Source libraries used](#Open-Source-libraries-used)
+4. [APIs](#APIs)
+5. [Libraries](#Libraries)
 6. [Backend](#Backend)
 7. [Credits](#Credits)
 
@@ -34,13 +34,13 @@ Parse Chat is a chat client using Parse to explore the features of its ORM and b
 
 Here's a GIF of how the app works:
 
-<img src="https://user-images.githubusercontent.com/35745973/82294769-81fee880-9963-11ea-9922-a0aec5455180.gif" width=250><br>
+<img src="https://user-images.githubusercontent.com/35745973/82294769-81fee880-9963-11ea-9922-a0aec5455180.gif" width=250>
 
-## APIs Used
+## APIs
 
 - [Adorable Avatars API](https://github.com/adorableio/avatars-api-middleware) - An avatar placeholder service for web developers and designers.
 
-## Open-source libraries used
+## Libraries
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) - An HTTP networking library written in Swift.
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage) - An image component library for Alamofire.
@@ -53,4 +53,4 @@ Here's a GIF of how the app works:
 
 ## Credits
 
->This is a companion project to CodePath's Professional iOS Course, check out the full course at [www.codepath.org](https://codepath.org/)
+>This is a companion project to CodePath's Professional iOS Course, check out the full course at [www.codepath.org](https://codepath.org/).
