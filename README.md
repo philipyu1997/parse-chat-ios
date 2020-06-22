@@ -34,7 +34,7 @@ Parse Chat is a chat client using Parse to explore the features of its ORM and b
 
 Here's a GIF of how the app works:
 
-<img src="https://user-images.githubusercontent.com/35745973/82294769-81fee880-9963-11ea-9922-a0aec5455180.gif" width=250>
+<img src="https://github.com/py415/app-resources/blob/master/ios/ios-parse-chat.gif" width=250>
 
 ## APIs
 
