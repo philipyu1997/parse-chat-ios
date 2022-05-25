@@ -1,20 +1,20 @@
-# Parse Chat
+# 💬 Parse Chat
 
-## Table of Contents
-1. [Overview](#Overview)
-2. [Product Specs](#Product-Specs)
-3. [App Walkthrough](#App-Walkthrough)
-4. [APIs](#APIs)
-5. [Libraries](#Libraries)
-6. [Backend](#Backend)
-7. [Credits](#Credits)
+## 📋 Table of Contents
+1. [Overview](#-Overview)
+2. [Product Specs](#-Product-Specs)
+3. [App Walkthrough](#-App-Walkthrough)
+4. [APIs](#-APIs)
+5. [Libraries](#-Libraries)
+6. [Backend](#-Backend)
+7. [Credits](#-Credits)
 
-## Overview
+## 👀 Overview
 ### Description
 
 Parse Chat is a chat client using Parse to explore the features of its ORM and backend service.
 
-## Product Specs
+## 📕 Product Specs
 ### User Stories
 
 - [X] User shall be able to sign up and sign in to the login screen.
@@ -30,27 +30,27 @@ Parse Chat is a chat client using Parse to explore the features of its ORM and b
 - [X] User shall be able to see bubble design chat messages.
 - [X] Chat messages shall be able to expand or contract as needed to show the chat message author (user) if it exists.
 
-## App Walkthrough
+## 🎬 App Walkthrough
 
 Here's a GIF of how the app works:
 
-<img src="https://raw.githubusercontent.com/py415/app-resources/master/ios/ios-parse-chat.gif" width="250" />
+<img src="https://raw.githubusercontent.com/py415/app-resources/master/GIFs/ios/ios-parse-chat.gif" width="250" />
 
-## APIs
+## 🔑 APIs
 
 - [Adorable Avatars API](https://github.com/adorableio/avatars-api-middleware) - An avatar placeholder service for web developers and designers.
 
-## Libraries
+## 📚 Libraries
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) - An HTTP networking library written in Swift.
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage) - An image component library for Alamofire.
 - [IQKeyboardManagerSwift](https://github.com/hackiftekhar/IQKeyboardManager) - A codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView.
 - [ProgressHUD](https://github.com/relatedcode/ProgressHUD) - A lightweight and easy-to-use HUD for iOS (written in Objective-C).
 
-## Backend
+## ⏪ Backend
 
 - [Parse](https://github.com/parse-community/Parse-SDK-iOS-OSX) - An open source Backend-as-a-Service (BaaS) framework initially developed by Facebook. The platform now has an active and robust community of fanatical developers who constantly innovate and strive to improve the already impressive and modular platform.
 
-## Credits
+## 💳 Credits
 
 >This is a companion project to CodePath's Professional iOS Course, check out the full course at [www.codepath.org](https://codepath.org/).
